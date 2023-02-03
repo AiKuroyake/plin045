@@ -16,4 +16,8 @@ export class DatabaseService {
   getAll() {
     return this.messages;
   }
+
+  remove(index : number) {
+    this.messages.splice(index, 1);
+  }
 }

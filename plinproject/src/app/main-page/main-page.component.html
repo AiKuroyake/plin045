@@ -13,8 +13,7 @@
 <!--<input type="text" #nm/> jen v html-->
 <!--<button (click)="send(nm.value)">Odeslat</button>-->
 <!--<button (click)="send(nm)">Odeslat</button>-->
-{{newAuthor}}
-<app-message [messageT] = "i" *ngFor="let i of db.getAll()"></app-message>
+<app-message (removeMessage)="db.remove(i)" [messageT] = "item" *ngFor="let item of db.getAll(); let i = index"></app-message>
 <app-new-message></app-new-message>
 <p></p>
 <app-secret-button [textMessage] = "'tajny text'"></app-secret-button>

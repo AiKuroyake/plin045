@@ -1,1 +1,2 @@
-<p>{{messageT.author}}: {{messageT.message}}</p>
+<p *ngIf="messageT">{{messageT?.author}}: {{messageT?.message}} <app-delete-button (removeMessage)="messageRemoved()"></app-delete-button></p>
+<p *nfIf="!messageT">Zprava neexistuje.</p>

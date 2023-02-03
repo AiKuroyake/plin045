@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { DatabaseService } from '../database.service';
 
 @Component({
@@ -6,6 +6,7 @@ import { DatabaseService } from '../database.service';
   templateUrl: './new-message.component.html',
   styleUrls: ['./new-message.component.scss']
 })
+
 export class NewMessageComponent {
   constructor(public db: DatabaseService) {}
   public newMessage!: string;

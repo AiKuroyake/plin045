@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +11,9 @@ import { SongComponent } from './song/song.component';
 import { MessageComponent } from './message/message.component';
 import { FormsModule } from '@angular/forms';
 import { NewMessageComponent } from './new-message/new-message.component';
-import { SecretButtonComponent } from './secret-button/secret-button.component'
+import { SecretButtonComponent } from './secret-button/secret-button.component';
+import { DeleteButtonComponent } from './delete-button/delete-button.component';
+import { ServiceWorkerModule } from '@angular/service-worker'
 
 @NgModule({
   declarations: [
@@ -24,11 +26,18 @@ import { SecretButtonComponent } from './secret-button/secret-button.component'
     MessageComponent,
     NewMessageComponent,
     SecretButtonComponent,
+    DeleteButtonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

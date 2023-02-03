@@ -56,14 +56,8 @@ export class MainPageComponent {
   }
   */
 
-  public send(): void {
-    //this.chat.push({author: this.newAuthor, message: this.newMessage});
-    this.db.addMessage(this.newAuthor, this.newMessage)
-    this.newAuthor = "";
-    this.newMessage = "";
-  }
+  
 
-  public newMessage!: string;
-  public newAuthor!: string;
+
 
 }
