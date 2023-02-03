@@ -1,0 +1,20 @@
+<p>main-page works!</p>
+<a routerLink="/playlists">Playlists</a>
+<p></p>
+<button (click)="startGame()">Game Settings</button>
+<p></p>
+<button (click)="addAB()">Scitej</button>
+{{c}}
+<p></p>
+<button (click)="multiplyAB()">Nasob</button>
+{{d}}
+<p></p>
+<!--<app-message [messageT] = "'11'"></app-message> <!--prvni uvozovky se nepocitaj-->
+<!--<input type="text" #nm/> jen v html-->
+<!--<button (click)="send(nm.value)">Odeslat</button>-->
+<!--<button (click)="send(nm)">Odeslat</button>-->
+{{newAuthor}}
+<app-message [messageT] = "i" *ngFor="let i of db.getAll()"></app-message>
+<app-new-message></app-new-message>
+<p></p>
+<app-secret-button [textMessage] = "'tajny text'"></app-secret-button>
